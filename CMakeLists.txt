@@ -38,8 +38,11 @@ enable_testing()
 ### Project options
 ###
 ## Project stuff
-option(YAML_CPP_BUILD_TOOLS "Enable testing and parse tools" ON)
-option(YAML_CPP_BUILD_CONTRIB "Enable contrib stuff in library" ON)
+option(YAML_CPP_BUILD_TOOLS "Enable testing and parse tools" OFF)
+option(YAML_CPP_BUILD_CONTRIB "Enable contrib stuff in library" OFF)
+
+set(CMAKE_BUILD_TYPE "Release" CACHE STRING
+    "Choose the type of build, options are: Debug Release RelWithDebInfo MinSizeRel." FORCE)
 
 ## Build options
 # --> General
@@ -53,7 +56,7 @@ option(APPLE_UNIVERSAL_BIN "Apple: Build universal binary" OFF)
 # --> Microsoft Visual C++
 # see http://msdn.microsoft.com/en-us/library/aa278396(v=VS.60).aspx
 #     http://msdn.microsoft.com/en-us/library/2kzt1wy3(v=VS.71).aspx
-option(MSVC_SHARED_RT "MSVC: Build with shared runtime libs (/MD)" ON)
+option(MSVC_SHARED_RT "MSVC: Build with shared runtime libs (/MD)" OFF)
 option(MSVC_STHREADED_RT "MSVC: Build with single-threaded static runtime libs (/ML until VS .NET 2003)" OFF)
 
 ###
